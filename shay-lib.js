@@ -4,6 +4,7 @@
 //
 // I find myself repeatedly creating the same or similar functions in personal projects. Going forwads I'm going to collate such potentially universal functions into this one file.
 //
+
 //////////////////////////////////////////////////
 
 
