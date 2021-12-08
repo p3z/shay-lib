@@ -1,7 +1,8 @@
 Contents
 =========
 
-
-
 dataURLtoFile()
 Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
+
+hideSrc()
+Prevents access to source inspection (used to hide propietary info from joe bloggs user).

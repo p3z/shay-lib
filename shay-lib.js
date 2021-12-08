@@ -27,3 +27,31 @@ function dataURLtoFile(dataurl, filename) {
 //Usage example:
 var file = dataURLtoFile(dataURL,'test.png');
 console.log(file);
+
+ // If we dont want peeps to know what software this is	
+function hideSrc(){
+
+    // Prevents right clicks
+    document.addEventListener('contextmenu', function(e) {
+		e.preventDefault(); 
+	  });
+
+
+    // Prevent them seeing source
+    document.onkeydown = function(e) {
+        if (e.ctrlKey &&         // ctrl key
+            (e.keyCode === 67 || // c (ctrl + c = copy)
+             e.keyCode === 86 || // v (ctrl + v = paste)
+             e.keyCode === 85 || // u (ctrl + u = src code)
+             e.keyCode === 117)) { // f6 (ctrl + f6 go to the next document window)
+            alert('not allowed');
+            return false;
+        } else if (e.keyCode === 123){ // F12 = open devtools
+            alert('not allowed');
+            return false;
+            
+        }else {
+            return true;
+        }
+    };
+}
