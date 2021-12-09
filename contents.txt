@@ -1,8 +1,20 @@
 Contents
 =========
 
-dataURLtoFile()
-Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
+- dataURLtoFile: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
+- hideSrc: Prevents access to source inspection (used to hide propietary info from joe bloggs user)
+- randomQuery: Return a random number between the 2 arguments passed in
+- twoNums: randomQuery required. Returns a string of 2 numbers
+- coinFlip: randomQuery required. Return a 1 or a 0
+- repeatFunction: Run a function repeatedly 'n' number of times [Doesn't work if we need to pass arguments to it currently]
+- twoNums: Generate a random 2 decimal number as a string (typically used to add pence to a pound amount)
+- bulkClassToggler: Takes a css class, applies it to all elements and removes it from all exceptions (if direction is false, it works in reverse)
+- htmlFactory: Creates as many html elements as needed according to args
 
-hideSrc()
-Prevents access to source inspection (used to hide propietary info from joe bloggs user).
+
+Bootstrap css required (wouldnt be too much work to change this to take arbitrary clases instead)
+- setFlashMessage: alertBox element required. Toggles alertBox success or error message along with a custom message
+- resetFlashMessage: alertBox element required. Hides alertBox after a period of time
+
+
+
