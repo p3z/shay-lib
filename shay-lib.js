@@ -242,3 +242,13 @@ function htmlBuilder( buildThis ){
     } // end loop
 
 } // end htmlBuilder
+
+function isUniqueStr(str1, str2){
+    
+    if (str1 === str2){
+        return false;
+    } else {
+        return true;
+    }
+
+}
