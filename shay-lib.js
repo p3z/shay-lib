@@ -60,7 +60,7 @@ function hideSrc(){
 function randomQuery(floor, ceil, string = "false"){
     let num = Math.floor(Math.random() * (ceil - floor + 1) + floor);
 
-    if(string == true){
+    if(string){
 
         console.log("String mode set to true")
         return num.toString();
@@ -70,6 +70,23 @@ function randomQuery(floor, ceil, string = "false"){
     
 } // end randomQuery
 
+
+// Depends on randomQuery()
+// You should refactor this to be able to take a limited range of characters too
+function randomAlpha(lower = "false"){
+    const alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+    // Generate a random letter
+    var charIndex = randomQuery(0, 25);
+    var character = alpha[charIndex].toLowerCase();
+   
+
+    return character;
+
+
+}
+
+// Depends on randomQuery()
 function coinFlip(){
     return randomQuery(0, 1);
 } // end coinFlip
