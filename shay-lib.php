@@ -31,4 +31,61 @@ function randomAlpha($lower = "false"){
 
 
 }
+
+// Takes a string of arbitrary numbers and letters (as salts), and letters to be translated to numbers according to a key
+// The characters of the key each refer to a numeric digit, so it's important the chosen key have 10 unique characters
+// The function will removes all numbers and letters not in the key, translate all remaining letters to numbers
+function simple_cypher_alpha_only($code, $key = "blacksmith"){
+		
+	// Remove all number salts
+	$code = preg_replace('/[0-9]+/', '', $code);
+	
+	// Normalize to lower case
+	$code = strtolower($code);
+		
+	// Break into array to loop over
+	$code_arr = str_split($code);
+	
+	switch ($key){
+			
+		case "blacksmith":
+			$key_arr = str_split("blacksmith");
+			$translation = "";
+			
+			// Loop through the input
+			foreach($code_arr as $character){
+				
+				// Loop through the key
+				foreach($key_arr as $i => $key_char){
+					if($character == $key_char){
+						$translation .= $i;
+					}
+				}
+			}
+			
+			break;
+			
+		case "flashpoint":
+			$key_arr = str_split("flashpoint");
+			$translation = "";
+			
+			// Loop through the input
+			foreach($code_arr as $character){
+				
+				// Loop through the key
+				foreach($key_arr as $i => $key_char){
+					if($character == $key_char){
+						$translation .= $i;
+					}
+				}
+			}
+			
+			break;
+			
+			
+		
+	}
+			
+	return $translation;
+}
 ?>
