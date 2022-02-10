@@ -25,8 +25,8 @@ function dataURLtoFile(dataurl, filename) {
 }
 
 //Usage example:
-var file = dataURLtoFile(dataURL,'test.png');
-console.log(file);
+//var file = dataURLtoFile(dataURL,'test.png');
+//console.log(file);
 
  // If we dont want peeps to know what software this is	
 function hideSrc(){
