@@ -307,3 +307,19 @@ let fruits = ["Banana", "Orange", "Apple", "Mango"];
 // console.log(remove_duplicates(catalog_two));
 
 console.log(is_fresh_input("04ZI-91J5-69Y5-92N2", catalog_two))
+
+
+function linux_win(sys, str){
+    
+    switch(sys){
+        case "linux":
+            return str.replaceAll('/', '\\');
+
+        case "windows":
+            return str.replaceAll('\\', '/');
+
+        default:
+            return "One of your file paths has an error using Linux_win";
+    }
+
+}
