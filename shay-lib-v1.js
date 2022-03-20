@@ -10,8 +10,10 @@
 
 
 function dataURLtoFile(dataurl, filename) {
- 
-    var arr = dataurl.split(','),
+
+    if(dataurl !== undefined){
+
+        var arr = dataurl.split(','),
         mime = arr[0].match(/:(.*?);/)[1],
         bstr = atob(arr[1]), 
         n = bstr.length, 
@@ -22,6 +24,12 @@ function dataURLtoFile(dataurl, filename) {
     }
     
     return new File([u8arr], filename, {type:mime});
+
+    } else {
+        return "No data url specified";
+    }
+ 
+
 }
 
 //Usage example:

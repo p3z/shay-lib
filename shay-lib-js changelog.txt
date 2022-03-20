@@ -1,6 +1,8 @@
-Contents
-=========
+v1.0
+====
+- Started implementing versioning
 
+Contents
 - dataURLtoFile: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
     - Note: This function does not work with Node.js natively. Requires special handling of atob and File interfaces. See this: https://stackoverflow.com/questions/23097928/node-js-throws-btoa-is-not-defined-error
 - hideSrc: Prevents access to source inspection (used to hide propietary info from joe bloggs user)
@@ -19,6 +21,3 @@ Contents
 Bootstrap css required (wouldnt be too much work to change this to take arbitrary clases instead)
 - setFlashMessage: alertBox element required. Toggles alertBox success or error message along with a custom message
 - resetFlashMessage: alertBox element required. Hides alertBox after a period of time
-
-
-
