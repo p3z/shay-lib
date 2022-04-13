@@ -317,17 +317,9 @@ let fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(is_fresh_input("04ZI-91J5-69Y5-92N2", catalog_two))
 
 
-function linux_win(sys, str){
-    
-    switch(sys){
-        case "linux":
-            return str.replaceAll('/', '\\');
-
-        case "windows":
-            return str.replaceAll('\\', '/');
-
-        default:
-            return "One of your file paths has an error using Linux_win";
-    }
-
-}
+function isCanvasBlank(canvas){
+    //console.log("inside isCanvasBlank")
+    return !canvas.getContext('2d')
+      .getImageData(0, 0, canvas.width, canvas.height)
+      .data.some(channel => channel !== 0)
+  }

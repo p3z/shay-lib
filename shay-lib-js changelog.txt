@@ -15,7 +15,7 @@ Contents
 - bulkClassToggler: Takes a css class, applies it to all elements and removes it from all exceptions (if direction is false, it works in reverse)
 - htmlFactory: Creates as many html elements as needed according to args
 - isUniqueStr: Compares 2 strings for strict equality, returns true or false
-- linux_win: A small utility to prevent the annoyingness of working with filepaths between Linux and Windows systems.
+- isCanvasBlank: Returns true if passed-in html canvas is blank
 
 
 Bootstrap css required (wouldnt be too much work to change this to take arbitrary clases instead)
