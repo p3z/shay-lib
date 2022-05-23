@@ -9,7 +9,7 @@
 
 
 
-function dataURLtoFile(dataurl, filename) {
+function data_url_to_file(dataurl, filename) {
 
     if(dataurl !== undefined){
 
@@ -37,7 +37,7 @@ function dataURLtoFile(dataurl, filename) {
 //console.log(file);
 
  // If we dont want peeps to know what software this is	
-function hideSrc(){
+function hide_src(){
 
     // Prevents right clicks
     document.addEventListener('contextmenu', function(e) {
@@ -65,7 +65,7 @@ function hideSrc(){
 }
 
 
-function randomQuery(floor, ceil, string = "false"){
+function random_query(floor, ceil, string = "false"){
     let num = Math.floor(Math.random() * (ceil - floor + 1) + floor);
 
     if(string){
@@ -81,7 +81,7 @@ function randomQuery(floor, ceil, string = "false"){
 
 // Depends on randomQuery()
 // You should refactor this to be able to take a limited range of characters too
-function randomAlpha(lower = "false"){
+function random_alpha(lower = "false"){
     const alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
     // Generate a random letter
@@ -317,7 +317,7 @@ let fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(is_fresh_input("04ZI-91J5-69Y5-92N2", catalog_two))
 
 
-function isCanvasBlank(canvas){
+function is_canvas_blank(canvas){
     //console.log("inside isCanvasBlank")
     return !canvas.getContext('2d')
       .getImageData(0, 0, canvas.width, canvas.height)
