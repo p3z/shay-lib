@@ -3,9 +3,9 @@ v1.0
 - Started implementing versioning
 
 Contents
-- dataURLtoFile: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
+- data_url_to_file: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
     - Note: This function does not work with Node.js natively. Requires special handling of atob and File interfaces. See this: https://stackoverflow.com/questions/23097928/node-js-throws-btoa-is-not-defined-error
-- hideSrc: Prevents access to source inspection (used to hide propietary info from joe bloggs user)
+- hide_src: Prevents access to source inspection (used to hide propietary info from joe bloggs user)
 - randomQuery: Return a random number between the 2 arguments passed in
 - twoNums: randomQuery required. Returns a string of 2 numbers
 - coinFlip: randomQuery required. Return a 1 or a 0
