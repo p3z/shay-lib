@@ -1,4 +1,19 @@
- // If we dont want peeps to know what software this is	
+function url_params_to_dict() {
+
+    var query_dict = {};
+    // Get the query string, break into an array and loop through each clause
+    location.search.substr(1).split("&").forEach(
+     // For each clause, assign the key of query_dict to be the key in the url param, and likewise the value
+    	function (item) {
+    		query_dict[item.split("=")[0]] = item.split("=")[1];
+    	}
+    );
+
+   // Returns a dictionary of url parameters
+    return query_dict;
+}
+
+// If we dont want peeps to know what software this is	
  function hide_src(){
 
    // Prevents right clicks
@@ -58,32 +73,18 @@ function data_url_to_file(dataurl, filename) {
 
 function show_flash_message(type, message, alert_box){
 
-   alert_box.classList.remove("hide");
-   alert_box.textContent = message;
+    alert_box.classList.add("hide");
+    alert_box.classList.remove("alert-success", "alert-danger", "alert-warning");  // Remove any old flash messages
+    alert_box.textContent = message;
+    alert_box.classList.add(`alert-${type}`);
+    alert_box.classList.remove("hide");
 
-   switch(type){
-       case 'success':
-           alert_box.classList.add("alert-success");            
-           hide_flash_message("alert-success");
-           break;
+} 
 
-       case 'error':
-           alert_box.classList.add("alert-danger");
-           hide_flash_message("alert-danger");
-       break;
-
-       case 'warning':
-           alertBox.classList.add("alert-warning");
-           hide_flash_message("alert-warning");
-       break;
-   }
-
-} // setFlashMessage
-
-function hide_flash_message(removeClass, alert_box, ms = 1000){
+function hide_flash_message(remove_classes, alert_box, ms = 1000){
    
    setTimeout(function(){
-       alert_box.classList.remove(removeClass);
+       alert_box.classList.remove(remove_classes);
        alert_box.classList.add("hide");
        alert_box.textContent = '';
    }, ms)
@@ -103,6 +104,10 @@ function random_color(alpha = false){
            Math.floor(Math.random() * 256) + ',' + 
            Math.floor(Math.random() * 256) + ')';
    }
+}
+
+function random_gradient(){
+    
 }
 
 function is_canvas_blank(canvas){

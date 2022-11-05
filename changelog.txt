@@ -5,6 +5,8 @@ version | changes
         | - Switched all to snake_case for consistency
         | - Split main js file into individual thematic utility files
         | - Updated function and variable names to be more semantic
+1.0.2   | - Started filing functions into classes and refactoring for simplicity
+        | - Added url_params_to_dict system_utils
 
 Contents
 - data_url_to_file: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)
