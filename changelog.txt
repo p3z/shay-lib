@@ -7,6 +7,7 @@ version | changes
         | - Updated function and variable names to be more semantic
 1.0.2   | - Started filing functions into classes and refactoring for simplicity
         | - Added url_params_to_dict system_utils
+1.0.3   | - Added save canvas to png and pdf functions
 
 Contents
 - data_url_to_file: Converts a data url into a file (source: https://stackoverflow.com/questions/35940290/how-to-convert-base64-string-to-javascript-file-object-like-as-from-file-input-f)

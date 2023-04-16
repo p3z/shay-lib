@@ -307,3 +307,56 @@ function make_html_in_bulk( buildThis ){
    } // end loop
 
 } // end make_html_in_bulk
+
+
+function save_as_pdf(canvas, height, width){
+
+    // Requires jdPSF in the head, also set window.jsPDF = window.jspdf.jsPDF; outside this fn
+    // Working version as of 13/04/23: <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    // create a new offscreen canvas with custom dimensions
+    const offscreenCanvas = document.createElement("canvas");
+    offscreenCanvas.width = width;
+    offscreenCanvas.height = height;
+
+    // draw the contents of the original canvas onto the offscreen canvas at the desired size
+    const offscreenCtx = offscreenCanvas.getContext("2d");
+    offscreenCtx.drawImage(canvas, 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+
+    // save the contents of the offscreen canvas as a PNG image
+    const imgData = offscreenCanvas.toDataURL("image/png");
+
+
+
+    const pdf = new jsPDF('p', 'in', [8.5, 11]);
+        setTimeout(function() {
+        pdf.addImage(imgData, 'PNG', 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+        pdf.save("canvas.pdf");
+        }, 500);
+} // end of pdf save
+		
+function save_as_png(canvas, height, width){
+	
+
+    // create a new offscreen canvas with custom dimensions
+    const offscreenCanvas = document.createElement("canvas");
+    offscreenCanvas.width = width;
+    offscreenCanvas.height = height;
+
+    // draw the contents of the original canvas onto the offscreen canvas at the desired size
+    const offscreenCtx = offscreenCanvas.getContext("2d");
+    offscreenCtx.drawImage(canvas, 0, 0, offscreenCanvas.width, offscreenCanvas.height);
+
+    // save the contents of the offscreen canvas as a PNG image
+    const imgData = offscreenCanvas.toDataURL("image/png");
+
+    // create a new anchor element to download the image
+    const link = document.createElement("a");
+    link.download = "canvas.png";
+    link.href = imgData;
+
+    // simulate a click on the anchor element to start the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+} // end of png save
